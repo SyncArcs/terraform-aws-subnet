@@ -44,7 +44,7 @@ variable "availability_zone" {
 variable "map_public_ip_on_launch" {
   description = "Map public IP on launch"
   type        = bool
-  default     = true
+  default     = false
 }
 
 

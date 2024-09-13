@@ -150,7 +150,7 @@ module "internet_gateway" {
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment for the resources | `string` | `""` | no |
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Order of the labels | `list(string)` | `[]` | no |
 | <a name="input_managedby"></a> [managedby](#input\_managedby) | Managed by label | `string` | `""` | no |
-| <a name="input_map_public_ip_on_launch"></a> [map\_public\_ip\_on\_launch](#input\_map\_public\_ip\_on\_launch) | Map public IP on launch | `bool` | `true` | no |
+| <a name="input_map_public_ip_on_launch"></a> [map\_public\_ip\_on\_launch](#input\_map\_public\_ip\_on\_launch) | Map public IP on launch | `bool` | `false` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for the resources | `string` | `""` | no |
 | <a name="input_repository"></a> [repository](#input\_repository) | Repository for the labels module | `string` | `null` | no |
 | <a name="input_subnet_cidr_block"></a> [subnet\_cidr\_block](#input\_subnet\_cidr\_block) | CIDR block for the subnet | `string` | `"10.0.1.0/24"` | no |
