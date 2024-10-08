@@ -29,7 +29,7 @@ module "private-subnets" {
   cidr_block          = module.vpc.vpc_cidr_block
   ipv6_cidr_block     = module.vpc.ipv6_cidr_block
   ipv4_private_cidrs  = ["10.0.3.0/24"]
-  public_subnet_ids   = ["subnet-07962e9e61ad3bcd3"]
+  public_subnet_ids   = module.subnet.public_subnet_id
 }
 ```
 
@@ -37,7 +37,7 @@ module "private-subnets" {
 
 ```hcl
 module "subnets" {
-  source              = "./../../"
+  source              = "git::https://github.com/SyncArcs/terraform-aws-subnet.git?ref=v1.0.0"
   nat_gateway_enabled = true
   single_nat_gateway  = true
   name                = "app"
@@ -56,7 +56,7 @@ module "subnets" {
 
 ```hcl
 module "subnets" {
-  source                                         = "./../../"
+  source                                         = "git::https://github.com/SyncArcs/terraform-aws-subnet.git?ref=v1.0.0"
   name                                           = "app"
   environment                                    = "test"
   nat_gateway_enabled                            = true
@@ -76,7 +76,7 @@ module "subnets" {
 
 ```hcl
 module "subnet" {
-  source             = "./../.."
+  source             = "git::https://github.com/SyncArcs/terraform-aws-subnet.git?ref=v1.0.0"
   name               = "app"
   environment        = "test"
   availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
